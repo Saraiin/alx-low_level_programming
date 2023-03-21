@@ -2,7 +2,7 @@
 
 /**
  * print_sign - prints the sign of a number
- * @c: parameter to test
+ * @n: parameter to test
  * Return: 1 if n is > zero, 0 if n is zero, -1 if n is < zero
  */
 
