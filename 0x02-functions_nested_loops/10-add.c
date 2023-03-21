@@ -2,7 +2,8 @@
 
 /**
  * add - function that adds two integers together
- * add takes in an two integer
+ * @a: parametre
+ * @b: parametre
  * Return: a + b result
  */
 
