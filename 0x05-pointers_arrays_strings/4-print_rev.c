@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdio.hi>
+#include <stdio.h>
 /**
  * print_rev - function that prints a string in reverse
  * @s: string to reverse
@@ -7,15 +7,15 @@
 void print_rev(char *s)
 {
 	int l = 0;
-	int i;
+	int i = 0;
 
-	while (*s != '\0')
+	while (s[i] != '\0')
 	{
 		l++;
 	}
 	for (i = l; i > 0; i--)
 	{
-		_putchar("%d", s[i]);
+		_putchar(s[i]);
 	}
 	_putchar('\n');
 }
