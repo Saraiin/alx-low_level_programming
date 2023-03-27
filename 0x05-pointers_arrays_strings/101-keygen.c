@@ -1,21 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
-
+#include <unistd.h>
 /**
+ * main - program that generates random valid passwords
+ * for the program 101-crackme
  *
- *
+ * Return: 0
  */
-
 int main(void)
 {
-	srand((unsigned int)(time(NULL)));
+	int unlock, passwd;
 
-	int index = 0;
-	char characters[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/,.-+=~`<>:";
-	for(index = 0; index < 12; index++)
+	srand(time(NULL));
+	unlock = 2772;
+	while (unlock >= 127)
 	{
-		printf("%c", characters[rand() % (sizeof characters - 1)]);
+		passwd = (rand() % 126) + 1;
+		printf("%c", passwd);
+		unlock -= passwd;
 	}
+
+	printf("%c", unlock);
+	return (0);
 }
