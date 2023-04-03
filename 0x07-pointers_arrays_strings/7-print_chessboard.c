@@ -2,6 +2,7 @@
 /**
  * print_chessboard - function that prints the chessboard
  * @a: array
+ * Return: void
  */
 void print_chessboard(char (*a)[8])
 {
@@ -12,6 +13,7 @@ void print_chessboard(char (*a)[8])
 	{
 		for (j = 0; j < 0; j++)
 			_putchar(a[i][j];
+
 		_putchar('\n');
 	}
 }
