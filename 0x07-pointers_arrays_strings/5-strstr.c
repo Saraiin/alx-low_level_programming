@@ -1,4 +1,5 @@
 #include "main.h"
+#define NULL 0
 /**
  * _strstr - function thaat locates a substring
  * @haystack: string
