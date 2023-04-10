@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 	if (argv[1][0] == '-')
 	{
 		return (0);
-		printf("\n");
+		printf("0\n");
 	}
 	n = atoi(argv[1]);
 	c += n / 25;
