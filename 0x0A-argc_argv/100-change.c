@@ -20,8 +20,8 @@ int main(int argc, char *argv[])
 	}
 	if (argv[1][0] == '-')
 	{
-		return (0);
 		printf("0\n");
+		return (0);
 	}
 	n = atoi(argv[1]);
 	c += n / 25;
