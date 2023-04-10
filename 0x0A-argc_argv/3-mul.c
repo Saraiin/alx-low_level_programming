@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * main - function main
+ * main - rtint producet of argument
  * @argc: number of argument
  * @argv: array of argument
  * Return: 0 on success, 1 if not
