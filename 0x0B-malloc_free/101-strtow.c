@@ -30,9 +30,7 @@ int cntword(char *s)
  */
 char **strtow(char *str)
 {
-	int i, j, k, l;
-	int nw = 0;
-	int c = 0;
+	int i, j, k, l, nw = 0, c = 0;
 	char **a;
 
 	if (str == NULL || *str == '\0')
