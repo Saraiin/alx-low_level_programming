@@ -40,6 +40,9 @@ char **strtow(char *str)
 	nw = cntword(str);
 	if (nw == 1)
 		return (NULL);
+	a = (char **)malloc(nw * sizeof(char *));
+	if (a == NULL)
+		return (NULL);
 	a[nw - 1] = NULL;
 	i = 0;
 	while (str[i])
