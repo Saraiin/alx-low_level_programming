@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include <stdlib.h>
+#include <stdio.h>
 #include "main.h"
 /**
  * digit - checks if string contains a non digit
@@ -19,11 +19,11 @@ int digit(char *s)
 	return (1);
 }
 /**
- * strlen - length of string
+ * _strlen - length of string
  * @s: string
  * Return: length of string
  */
-int strlen(char *s)
+int _strlen(char *s)
 {
 	int i = 0;
 
@@ -57,10 +57,10 @@ int main(int argc, char *argv[])
 	s1 = argv[1], s2 = argv[2];
 	if (argc != 3 || !digit(s1) || !digit(s2))
 		errors();
-	ln1 = strlen(s1);
-	ln2 = strlen(s2);
+	ln1 = _strlen(s1);
+	ln2 = _strlen(s2);
 	ln = ln1 + ln2 + 1;
-	mul = malloc(sizeof(int) * len);
+	mul = malloc(sizeof(int) * ln);
 	if (!mul)
 		return (1);
 	for (i = 0; i <= ln1 + ln2; i++)
@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
 	{
 		d1 = s1[ln1] - '0';
 		carry = 0;
-		for (ln2 =strlen(s2) - 1; ln2 >= 0; ln2--)
+		for (ln2 = _strlen(s2) - 1; ln2 >= 0; ln2--)
 		{
 			d2 = s2[ln2] - '0';
 			carry += mul[ln1 + ln2 + 1] + (d1 * d2);
@@ -77,9 +77,9 @@ int main(int argc, char *argv[])
 			carry /= 10;
 		}
 		if (carry > 0)
-			result[ln1 + ln2 +1] += carry;
+			mul[ln1 + ln2 + 1] += carry;
 	}
-	for (i = 0; i < len - 1; i++)
+	for (i = 0; i < ln - 1; i++)
 	{
 		if (mul[i])
 			a = 1;
@@ -90,5 +90,5 @@ int main(int argc, char *argv[])
 		_putchar('0');
 	_putchar('\n');
 	free(mul);
-	return(0);
+	return (0);
 }
