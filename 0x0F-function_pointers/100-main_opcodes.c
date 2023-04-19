@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		ptintf("Error\n");
+		printf("Error\n");
 		exit(1);
 	}
 	n = atoi(argv[1]);
