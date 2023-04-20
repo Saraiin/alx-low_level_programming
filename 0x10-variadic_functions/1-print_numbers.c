@@ -6,18 +6,19 @@
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
-	unsigned int i;
+	unsigned int i, elmt;
 	va_list l;
-	int elmt;
 
+	if (n == 0)
+		return;
 	va_start(l, n);
 	for (i = 0; i < n; i++)
 	{
 		elmt = va_arg(l, int);
 		if (!separator)
-			printf("%i", elmt);
+			printf("%d", elmt);
 		else
-			printf("%s%i", separator, elmt);
+			printf("%s%d", separator, elmt);
 	}
 	printf("\n");
 	va_end(l);
