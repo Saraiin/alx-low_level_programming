@@ -17,7 +17,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		if (!separator)
 			printf("%i", elmt);
 		else
-			printf("%i%s", elmt, separator);
+			printf("%s%i", separator, elmt);
 	}
 	printf("\n");
 	va_end(l);
