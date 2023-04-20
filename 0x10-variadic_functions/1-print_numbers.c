@@ -6,7 +6,7 @@
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
-	unsigned int i, elmt;
+	unsigned int i;
 	va_list l;
 
 	if (n == 0)
@@ -14,11 +14,10 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	va_start(l, n);
 	for (i = 0; i < n; i++)
 	{
-		elmt = va_arg(l, int);
 		if (!separator)
-			printf("%i", elmt);
+			printf("%i", va_arg(l, int));
 		else
-			printf("%s%i", separator, elmt);
+			printf("%s%i", separator, va_arg(l, int));
 	}
 	printf("\n");
 	va_end(l);
