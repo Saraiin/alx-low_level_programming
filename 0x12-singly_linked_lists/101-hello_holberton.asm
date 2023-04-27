@@ -1,10 +1,12 @@
 	global main
 	extern printf
+
 	section .text
 main:
-	push	message
+	mov	rdi, message
+	mov	rax, 0
 	call	printf
-	add	esp, 4
+	mov	rax, 0
 	ret
 message:
 	db "Hello, Holberton", 10, 0
