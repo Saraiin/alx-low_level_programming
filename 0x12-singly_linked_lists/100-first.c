@@ -1,10 +1,10 @@
 #include <stdio.h>
-void tortoise(void)__attribte__((constructor));
+void theHare(void)__attribute__((constructor));
 /**
- * tortoise - prints You're beat! and yet, you must allow,
+ * theHare - prints You're beat! and yet, you must allow,
  * I bore my house upon my back!
  */
-void tortoise(void)
+void theHare(void)
 {
 	printf("You're beat! and yet, you must allow,\n");
 	printf("I bore my house upon my back!\n");
