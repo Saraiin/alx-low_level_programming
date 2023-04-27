@@ -6,7 +6,7 @@
  */
 size_t list_len(const list_t *h)
 {
-	register unsigned int nb = 0;
+	size_t  nb = 0;
 	
 	while (h)
 	{
