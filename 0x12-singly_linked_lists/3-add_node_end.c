@@ -43,7 +43,7 @@ list_t *add_node_end(list_t **head, const char *str)
 		*head = newnd;
 		return (newnd);
 	}
-	while (last->next)
+	while (lastnd->next)
 		lastnd = last->next;
 	lastnd->next = newnd;
 	return (lastnd);
