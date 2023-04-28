@@ -1,10 +1,10 @@
 #include "lists.h"
 /**
- * _strlen - returns the le,ght of string
+ * strln - returns the le,ght of string
  * @str: given tring
  * Return: length of string
  */
-unsigned int _strlen(char *str)
+unsigned int strln(char *str)
 {
 	unsigned int ln = 0, i = 0;
 
@@ -34,7 +34,7 @@ list_t *add_node(list_t **head, const char *str)
 		free(newnd);
 		return (NULL);
 	}
-	newnd->len = _strlen(newstr);
+	newnd->len = strlen(newstr);
 	newnd->str = newstr;
 	newnd->next = *head;
 	*head = newnd;

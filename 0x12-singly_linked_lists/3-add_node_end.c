@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * _strlen - returns the le,ght of string
+ * _strlen - returns the length of string
  * @str: given tring
  * Return: length of string
  */
@@ -22,7 +22,7 @@ list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *newnd;
 	char *newstr;
-	list_t *last = *head;
+	list_t *lastnd = *head;
 
 	if (str == NULL)
 		return (NULL);
@@ -44,7 +44,7 @@ list_t *add_node_end(list_t **head, const char *str)
 		return (newnd);
 	}
 	while (last->next)
-		last = last->next;
-	last->next = newnd;
-	return (last);
+		lastnd = last->next;
+	lastnd->next = newnd;
+	return (lastnd);
 }
