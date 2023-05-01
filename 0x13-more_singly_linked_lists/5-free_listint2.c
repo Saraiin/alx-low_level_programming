@@ -5,19 +5,19 @@
  */
 void free_listint2(listint_t **head)
 {
-        listint_t *curnode;
-        listint_t *nextnd;
+	listint_t *curnode;
+	listint_t *nextnode;
 
-        if (head == NULL)
+	if (head == NULL)
 		return;
-
+	
 	curnode = *head;
-        while (curnode != NULL)
-        {
-                nextnd = curnode;
+	while (curnode != NULL)
+	{
+		nextnd = curnode;
 		curnode = nextnd->next;
-                free(curnode);
-        }
+		free(curnode);
+	}
 	*head = NULL;
-        head = NULL;
+	head = NULL;
 }
