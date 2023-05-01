@@ -3,7 +3,7 @@
  * get_nodeint_at_index - retyrn the nth node
  * @head: head
  * @index: index of the node
- * Return: node or 0
+ * Return: node or NULL
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
@@ -11,12 +11,12 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	listnt_t *curnd;
 
 	curnd = head;
-	while (curnd)
+	if (i == index)
+		return (curnd);
+	while (curnd && i < index)
 	{
-		if (i == index)
-			return (curnd);
 		i++;
 		curnd = curnd->next;
 	}
-	return (curnd);
+	return (NULL);
 }
