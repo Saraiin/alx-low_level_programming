@@ -6,14 +6,14 @@
 void free_listint(listint_t *head)
 {
 	listint_t *curnode;
-	listint_t *nextnd;
 
-	curnode = head;
-	if (curnode != NULL)
+	if (head == NULL)
+		return;
+	while (head)
 	{
-		nextnd = curnode->next;
-		free(curnode->next);
-		curnode = nextnd;
+		curnode = head;
+		head = head->next;
+		free(curnode);
 	}
 	head = NULL;
 }
