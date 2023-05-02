@@ -14,9 +14,6 @@ listint_t *find_listint_loop(listint_t *head)
 
 	nd1 = head;
 	nd2 = head;
-
-	if (nd1 == NULL || nd2 == NULL || nd2->next == NULL)
-		return (NULL);
 	while (nd1 && nd2 && nd2->next)
 	{
 		nd1 = nd1->next;
@@ -28,6 +25,8 @@ listint_t *find_listint_loop(listint_t *head)
 			break;
 		}
 	}
+	if (nd1 == NULL || nd2 == NULL || nd2->next == NULL)
+                return (NULL);
 	while (nd1 != nd2)
 	{
 		nd1 = nd1->next;
