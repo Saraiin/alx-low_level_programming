@@ -6,16 +6,13 @@
  */
 int pop_listint(listint_t **head)
 {
-	listint_t newnd;
-
+	listint_t *newnd;
+	
+	newnd = *head;
 	if (head != NULL)
 	{
-		newnd->next = head->next;
-		newnd->n = head->n;
-		newnd = head;
-		free(head);
-		return (newnd->n);
+		*head = (*head)->next;
+		free(newnd);
 	}
-	else
-		return (0);
+	return (newnd->n);
 }
