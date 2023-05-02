@@ -2,6 +2,7 @@
 /**
  * find_listint_loop - find loop
  * @head: headd
+ * Return: pointer
  */
 listint_t *find_listint_loop(listint_t *head)
 {
@@ -9,7 +10,7 @@ listint_t *find_listint_loop(listint_t *head)
 	listint_t *nd2;
 
 	if (head == NULL)
-		return(NULL);
+		return (NULL);
 
 	nd1 = head;
 	nd2 = head;
@@ -34,4 +35,3 @@ listint_t *find_listint_loop(listint_t *head)
 	}
 	return (nd2);
 }
-
