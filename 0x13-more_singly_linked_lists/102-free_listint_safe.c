@@ -11,7 +11,7 @@ const listint_t **m(const listint_t **l, size_t size, const listint_t *newnd)
 {
 	const listint_t **newl;
 	size_t i = 0;
-	
+
 	newl = malloc(size * sizeof(listint_t *));
 	if (newl == NULL)
 	{
