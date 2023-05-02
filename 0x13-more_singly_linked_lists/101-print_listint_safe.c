@@ -4,7 +4,7 @@
  * of pointers to nodes in linked list
  * @l: old list
  * @size: size of new list
- * newnd: new node to add
+ * @newnd: new node to add
  * Return: pointer to the new list
  */
 const listint_t **mem(const listint_t **l, size_t size, const listint_t *newnd)
@@ -49,6 +49,7 @@ size_t print_listint_safe(const listint_t *head)
 		n++;
 		l = mem(l, n, head);
 		printf("[%p] %d\n", (void *)head, head->n);
+		head = head->next;
 	}
 	free(l);
 	return (n);
