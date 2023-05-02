@@ -7,7 +7,7 @@
  * newnd: new node to add
  * Return: pointer to the new list
  */
-const listint_t **mem(const listint **l, size_t size, const listint_t *newnd)
+const listint_t **mem(const listint_t **l, size_t size, const listint_t *newnd)
 {
 	const listint_t **newl;
 	size_t i;
@@ -33,7 +33,7 @@ const listint_t **mem(const listint **l, size_t size, const listint_t *newnd)
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t i, n= 0;
-	listint_t **l = NULL;
+	const listint_t **l = NULL;
 
 	while (head != NULL)
 	{
