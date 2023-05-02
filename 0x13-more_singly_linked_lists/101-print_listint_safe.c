@@ -12,7 +12,7 @@ const listint_t **mem(const listint_t **l, size_t size, const listint_t *newnd)
 	const listint_t **newl;
 	size_t i;
 
-	newl= malloc(size * sizeof(listint_t *));
+	newl = malloc(size * sizeof(listint_t *));
 	if (newl == NULL)
 	{
 		free(l);
@@ -32,7 +32,7 @@ const listint_t **mem(const listint_t **l, size_t size, const listint_t *newnd)
 
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t i, n= 0;
+	size_t i, n = 0;
 	const listint_t **l = NULL;
 
 	while (head != NULL)
@@ -41,7 +41,7 @@ size_t print_listint_safe(const listint_t *head)
 		{
 			if (head == l[i])
 			{
-				printf ("-> [%p] %d\n", (void *)head, head->n);
+				printf("-> [%p] %d\n", (void *)head, head->n);
 				free(l);
 				return (n);
 			}
