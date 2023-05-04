@@ -17,8 +17,8 @@ int poww(int a, int b)
  */
 void print_binary(unsigned long int n)
 {
-	unsingned int pow = 0, b = 0;
-	unsigned long int n1 = n;
+	unsigned int pow = 0, n1 = n;
+	int b = 0;
 
 	if (n == 0)
 		_putchar('0');
@@ -29,13 +29,14 @@ void print_binary(unsigned long int n)
 		b++;
 	}
 	b--;
-	while (y >= 0)
+	while (b >= 0)
 	{
-		pow = poww(2, y);
+		pow = poww(2, b);
 		if (pow > n && n1 == n)
 		{
 			b--;
 			pow = poww(2, b);
+		}
 		if (pow > n1)
 			_putchar('0');
 		else
@@ -45,4 +46,4 @@ void print_binary(unsigned long int n)
 		}
 		b--;
 	}
-}		
+}
