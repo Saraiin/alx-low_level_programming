@@ -25,4 +25,5 @@ int clear_bit(unsigned long int *n, unsigned int index)
 		return (-1);
 	value = poww(2, index);
 	*n = (*n & value) ? *n ^ value : *n;
+	return (1);
 }
