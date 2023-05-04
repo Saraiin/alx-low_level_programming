@@ -9,4 +9,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m);
 int get_endianness(void);
 #include <stdlib.h>
 #include <stdio.h>
+int poww(int a, int b);
+int _putchar(char c);
+
 #endif
