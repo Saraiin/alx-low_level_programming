@@ -1,49 +1,22 @@
-#include "main.h"
 /**
- * poww - return a power b
- * @a: base
- * @b: exponent
- * Return: result
- */
-int poww(int a, int b)
-{
-	if (b == 0)
-		return (1);
-	return (a * poww(a, b - 1));
-}
-/**
- * print_binary - prints binary representation of a number
- * @n: number
+ * print_binary - Prints the binary representation of a number
+ * @n: The number to be printed in binary
  */
 void print_binary(unsigned long int n)
 {
-	unsigned int pow = 0, n1 = n;
-	int b = 0;
+	unsigned long int test = 1;
+	int i, s = 0;
 
-	if (n == 0)
-		_putchar('0');
-
-	while (pow < n)
+	for (i = 63; i >= 0; i--)
 	{
-		pow = poww(2, b);
-		b++;
-	}
-	b--;
-	while (b >= 0)
-	{
-		pow = poww(2, b);
-		if (pow > n && n1 == n)
-		{
-			b--;
-			pow = poww(2, b);
-		}
-		if (pow > n1)
-			_putchar('0');
-		else
+		if ((n >> i) & test)
 		{
 			_putchar('1');
-			n1 -= poww(2, b);
+			s = 1;
 		}
-		b--;
+		else if (s)
+			_putchar('0');
 	}
+	if (!s)
+		_putchar('0');
 }
