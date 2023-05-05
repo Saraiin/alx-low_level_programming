@@ -39,8 +39,8 @@ int poww(int a, int b)
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int result = 0, pow = 0;
-	int i, nbb = 0;
+	unsigned int result = 0, pow = 0, nbb = 0;
+	int i;
 
 	if (b == NULL)
 		return (0);
