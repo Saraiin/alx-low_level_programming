@@ -7,7 +7,7 @@
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int unitnum = 0;
-	
+
 	if (!b)
 		return (0);
 	while (*b)
@@ -20,9 +20,7 @@ unsigned int binary_to_uint(const char *b)
 			b++;
 		}
 		else
-		{
 			return (0);
-		}
 	}
 	return (unitnum);
 }
