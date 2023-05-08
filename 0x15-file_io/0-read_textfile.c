@@ -6,9 +6,9 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int *ptfile;
+	int ptfile;
 	char *tmp;
-	int nbcharwrite = 0, nbrcharread = 0;
+	ssize_t  nbrcharwrite = 0, nbrcharread = 0;
 
 	if (filename == NULL)
 		return (0);
@@ -28,7 +28,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(tmp);
 		return (0);
 	}
-	nbrcharwrite = write(STDOUT_FILEENO, tmp, nbrcharread);
+	nbrcharwrite = write(STDOUT_FILENO, tmp, nbrcharread);
 	free(tmp);
 	if (nbrcharwrite != nbrcharread)
 		return (0);
