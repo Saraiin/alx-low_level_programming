@@ -17,13 +17,13 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	fl_from = open(argv[1], O_RDONLT);
+	fl_from = open(argv[1], O_RDONLY);
 	if (fl_from < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	fl_to = open(arv[2], O_WRONLY | O_CREAT | O_TRUNC, 00664);
+	fl_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 00664);
 	while ((nbrcharead = read(fl_from, tmp, TMP_SIZE)) > 0)
 	{
 		if (fl_to < 0 || write(fl_to, tmp, nbrcharead) < 0)
