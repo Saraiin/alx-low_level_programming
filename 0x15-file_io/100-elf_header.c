@@ -18,7 +18,7 @@ void closefile(int filep)
 /**
  * readf - read from a file and print an error message upon failure
  * @fd: the file descriptor to read from
- * @buff: the buffer to write to
+ * @buf: the buffer to write to
  * @nb: the number of bytes to read
  */
 void readf(int fd, char *buf, size_t nb)
@@ -82,7 +82,7 @@ size_t clasself(const unsigned char *buffer)
 	if (buffer[EI_CLASS] == ELFCLASS64)
 	{
 		printf("ELF64\n");
-		return(64);
+		return (64);
 	}
 	if (buffer[EI_CLASS] == ELFCLASS32)
 	{
@@ -91,5 +91,72 @@ size_t clasself(const unsigned char *buffer)
 	}
 	printf("<unknown: %x>\n", buffer[EI_CLASS]);
 	return (32);
+}
+/**
+ * dataelf - print ELF data
+ * @buffer: the ELF header
+ *
+ * Return: 1 if big endian, otherwise 0
+ */
+int dataelf(const unsigned char *buffer)
+{
+	printf("  %-34s ", "Data:");
+	if (buffer[EI_DATA] == ELFDATA2MSB)
+	{
+		printf("2's complement, big endian\n");
+		return (1);
+	}
+	if (buffer[EI_DATA] == ELFDATA2LSB)
+	{
+		printf("2's complement, little endian\n");
+		return (0);
+	}
+	printf("Invalid data encoding\n");
+	return (0);
+}
+/**
+ * versionelf - print ELF version
+ * @buffer: the ELF header
+ */
+void versionelf(const unsigned char *buffer)
+{
+	printf("  %-34s %u", "Version:", buffer[EI_VERSION]);
+	if (buffer[EI_VERSION] == EV_CURRENT)
+		printf(" (current)\n");
+	else
+		printf("\n");
+}
+/**
+ * osabielf - print ELF OS/ABI
+ * @buffer: the ELF header
+ */
+void osabielf(const unsigned char *buffer)
+{
+	const char *os_table[19] = {
+		"UNIX - System V",
+		"UNIX - HP-UX",
+		"UNIX - NetBSD",
+		"UNIX - GNU",
+		"<unknown: 4>",
+		"<unknown: 5>",
+		"UNIX - Solaris",
+		"UNIX - AIX",
+		"UNIX - IRIX",
+		"UNIX - FreeBSD",
+		"UNIX - Tru64",
+		"Novell - Modesto",
+		"UNIX - OpenBSD",
+		"VMS - OpenVMS",
+		"HP - Non-Stop Kernel",
+		"AROS",
+		"FenixOS",
+		"Nuxi CloudABI",
+		"Stratus Technologies OpenVOS"
+	};
+	printf("  %-34s ", "OS/ABI:");
+	if (buffer[EI_OSABI] < 19)
+		printf("%s\n", os_table[(unsigned int) buffer[EI_OSABI]]);
+	else
+		printf("<unknown: %x>\n", buffer[EI_OSABI]);
 }
 
