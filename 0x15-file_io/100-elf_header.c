@@ -53,4 +53,43 @@ int nstcmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
+/**
+ * magicelf - print ELF magic
+ * @buffer: the ELF header
+ */
+void magicelf(const unsigned char *buffer)
+{
+	unsigned int i;
+
+	if (nstcmp((const char *) buffer, ELFMAG, 4))
+	{
+		write(STDERR_FILENO, "Error: Not an ELF file\n", 23);
+		exit(98);
+	}
+	printf("ELF Header:\n  Magic:   ");
+	for (i = 0; i < 16; ++i)
+		printf("%02x%c", buffer[i], i < 15 ? ' ' : '\n');
+}
+/**
+ * clasself - print ELF class
+ * @buffer: the ELF header
+ *
+ * Return: bit mode (32 or 64)
+ */
+size_t clasself(const unsigned char *buffer)
+{
+	printf("  %-34s ", "Class:");
+	if (buffer[EI_CLASS] == ELFCLASS64)
+	{
+		printf("ELF64\n");
+		return(64);
+	}
+	if (buffer[EI_CLASS] == ELFCLASS32)
+	{
+		printf("ELF32\n");
+		return (32);
+	}
+	printf("<unknown: %x>\n", buffer[EI_CLASS]);
+	return (32);
+}
 
