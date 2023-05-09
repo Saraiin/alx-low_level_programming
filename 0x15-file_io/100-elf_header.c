@@ -29,3 +29,28 @@ void readf(int fd, char *buf, size_t nb)
 	closefile(fd);
 	exit(98);
 }
+/**
+ * nstcmp - compare two strings
+ * @s1: the first string
+ * @s2: the second string
+ * @n: the max number of bytes to compare
+ *
+ * Return: 0 if the first n bytes of s1 and s2 are equal, otherwise non-zero
+ */
+int nstcmp(const char *s1, const char *s2, size_t n)
+{
+	for ( ; n && *s1 && *s2; --n, ++s1, ++s2)
+	{
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+	}
+	if (n)
+	{
+		if (*s1)
+			return (1);
+		if (*s2)
+			return (-2);
+	}
+	return (0);
+}
+
