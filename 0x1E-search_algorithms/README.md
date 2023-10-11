@@ -6,6 +6,10 @@
 <h1>TASKS</h1>
 <table>
 <tr>
+<th></th>
+<th>TASKS</th>
+</tr>
+<tr>
 <td> 0. Linear search</td>
 <td>Write a function that searches for a value in an array of integers using the Linear search algorithm
 
